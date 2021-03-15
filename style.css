@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: aqua;
+  --line-border-fill: darkturquoise;
+  --line-border-empty: aliceblue;
+}
+
+body {
+  font-family: "Akaya Telivigala", cursive;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  align-items: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  max-width: 100%;
+  color: darkturquoise;
+  margin: 30px 0px;
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.4s ease;
+  background-color: var(--line-border-empty);
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  color: #9fff;
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  border-radius: 50px;
+  background-color: aqua;
+  padding: 10px 30px;
+  border: 0;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}
