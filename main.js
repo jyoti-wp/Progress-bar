@@ -5,20 +5,24 @@ const circles = document.querySelectorAll(".circle");
 
 let activeClasses = 1;
 
-prev.addEventListener("click", () => {
+next.addEventListener("click", () => {
   activeClasses++;
 
-  if (activeClasses > circles.length) {
+  if (activeClasses > circles.length) { 
     activeClasses = circles.length;
   }
+
+  update();
 });
 
-next.addEventListener("click", () => {
+prev.addEventListener("click", () => {
   activeClasses--;
 
   if (activeClasses < 1) {
     activeClasses = 1;
   }
+
+  update();
 });
 
 function update() {
@@ -33,4 +37,13 @@ function update() {
   const actives = document.querySelectorAll(".active");
 
   progress.style.width = (actives.length - 1) / actives.length;
+
+  if (activeClasses === 1) {
+    prev.disabled = true;
+  } else if (activeClasses === circles.length) {
+    next.disabled = true;
+  } else {
+    prev.disabled = false;
+    next.disabled = false;
+  }
 }
