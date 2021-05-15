@@ -5,88 +5,95 @@
 }
 
 :root {
-  --main-bg-color: aqua;
-  --line-border-fill: darkturquoise;
-  --line-border-empty: aliceblue;
+  --bg-color: aqua;
+  --border-one: darkturquoise;
+  --border-two: skyblue;
 }
 
 body {
-  font-family: "Akaya Telivigala", cursive;
   display: flex;
+  font-family: "Akaya Telivigala", cursive;
+  height: 100vh;
   justify-content: center;
-  text-align: center;
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
+  overflow: hidden;
+  text-align: center;
 }
 
 .container {
   align-items: center;
 }
 
-.progress-container {
+.progress-bar {
+  align-items: center;
+  color: darkturquoise;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 400px;
   max-width: 100%;
-  color: darkturquoise;
   margin: 30px 0px;
   position: relative;
+  width: 400px;
 }
 
-.progress-container::before {
+.progress-bar::before {
   content: "";
+  background-color: var(--border-two);
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
   height: 4px;
   width: 100%;
-  z-index: -1;
+  transform: translateY(-50%);
   transition: 0.4s ease;
-  background-color: var(--line-border-empty);
+  z-index: -1;
 }
 
 .progress {
-  background-color: var(--line-border-fill);
+  background-color: var(--border-one);
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
   height: 5px;
+  transform: translateY(-50%);
+  transition: 0.4s ease;
   width: 0%;
   z-index: -1;
-  transition: 0.4s ease;
 }
 
 .circle {
-  color: #9fff;
+  align-items: center;
+  background-color: white;
+  border: 3px solid var(--border-two);
   border-radius: 50px;
-  height: 30px;
-  width: 30px;
+  color: #9fff;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: 3px solid var(--line-border-empty);
+  height: 30px;
+  width: 30px;
   transition: 0.4s ease;
 }
 
 .circle.active {
-  border-color: var(--line-border-fill);
+  border-color: var(--border-one);
 }
 
 .btn {
   border-radius: 50px;
   background-color: aqua;
-  padding: 10px 30px;
   border: 0;
   color: white;
-  margin: 5px;
   cursor: pointer;
+  padding: 10px 30px;
+  margin: 5px;
 }
 
 .btn:active {
   transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn:disabled {

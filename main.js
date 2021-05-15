@@ -8,7 +8,7 @@ let activeClasses = 1;
 next.addEventListener("click", () => {
   activeClasses++;
 
-  if (activeClasses > circles.length) { 
+  if (activeClasses > circles.length) {
     activeClasses = circles.length;
   }
 
