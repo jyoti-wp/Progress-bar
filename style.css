@@ -5,12 +5,12 @@
 }
 
 :root {
-  --bg-color: aqua;
-  --border-one: darkturquoise;
-  --border-two: skyblue;
+  --border-one: blue;
+  --border-two: rgb(159, 189, 243);
 }
 
 body {
+  background-color: snow;
   display: flex;
   font-family: "Akaya Telivigala", cursive;
   height: 100vh;
@@ -27,7 +27,7 @@ body {
 
 .progress-bar {
   align-items: center;
-  color: darkturquoise;
+  color: blue;
   display: flex;
   justify-content: space-between;
   max-width: 100%;
@@ -66,7 +66,7 @@ body {
   background-color: white;
   border: 3px solid var(--border-two);
   border-radius: 50px;
-  color: #9fff;
+  color: blue;
   display: flex;
   justify-content: center;
   height: 30px;
@@ -80,7 +80,7 @@ body {
 
 .btn {
   border-radius: 50px;
-  background-color: aqua;
+  background-color: blue;
   border: 0;
   color: white;
   cursor: pointer;
@@ -97,6 +97,6 @@ body {
 }
 
 .btn:disabled {
-  background-color: var(--line-border-empty);
+  background-color: var(--border-two);
   cursor: not-allowed;
 }
