@@ -21,7 +21,6 @@ prev.addEventListener("click", () => {
   if (activeClasses < 1) {
     activeClasses = 1;
   }
-
   update();
 });
 
